@@ -15,20 +15,22 @@ function updateCaseNumber(isIncrease) {
     return newCaseNumber;
 }
 
+function updateCaseTotalPrice(newCaseNumber) {
+    const caseTotalPrice = newCaseNumber * 59;
+    const caseTotalElement = document.getElementById("case-total");
+    caseTotalElement.innerText = caseTotalPrice;
+}
+
 
 // step 1: add event listener to the case plus button
 document.getElementById("btn-case-plus").addEventListener("click", function() {
     const newCaseNumber = updateCaseNumber(true);
-    const caseTotalPrice = newCaseNumber * 59;
-    const caseTotalElement = document.getElementById("case-total");
-    caseTotalElement.innerText = caseTotalPrice;
+    updateCaseTotalPrice(newCaseNumber);
 });
 
 // step 2: add event listener to the case minus button
 document.getElementById("btn-case-minus").addEventListener("click", function() {
     const newCaseNumber = updateCaseNumber(false);
-    const caseTotalPrice = newCaseNumber * 59;
-    const caseTotalElement = document.getElementById("case-total");
-    caseTotalElement.innerText = caseTotalPrice;
+    updateCaseTotalPrice(newCaseNumber);
 });
 
