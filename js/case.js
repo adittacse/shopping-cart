@@ -21,7 +21,6 @@ function updateCaseTotalPrice(newCaseNumber) {
     caseTotalElement.innerText = caseTotalPrice;
 }
 
-
 // step 1: add event listener to the case plus button
 document.getElementById("btn-case-plus").addEventListener("click", function() {
     const newCaseNumber = updateCaseNumber(true);
